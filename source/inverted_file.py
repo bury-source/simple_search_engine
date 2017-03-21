@@ -31,6 +31,17 @@ def get_words():
                 words.add(k.strip())
 
 def build_inverted_file():
+    """建立倒叙索引
+    
+    * 存储该索引的数据结构为python字典
+    * 格式类似:
+       {
+            'I': [0, 1, 3, 8],
+            'a': [1, 3, 7],
+            'boy': [2]
+       }
+       表示单词和包含单词id的文档id
+    """
     for c in words:
         inverted_file[c] = []
     
